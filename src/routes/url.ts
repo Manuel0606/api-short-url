@@ -1,10 +1,14 @@
 import { Router } from 'express'
+import { deletUrl, getUrl, getUrls, postUrl } from '../controllers/url'
 
 const router = Router()
 
-router.post('/', (req, res) => {
-  // res.json({ message: 'Hello, world!' })
-  res.send({data: 'Datos!'})
-})
+router.get('/:id', getUrl)
+
+router.get('/', getUrls)
+
+router.post('/', postUrl)
+
+router.delete('/:id', deletUrl)
 
 export { router }

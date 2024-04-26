@@ -19,7 +19,8 @@ const getUrls = (req: Request, res: Response) => {
 
 const postUrl = (req: Request, res: Response) => {
   try {
-    
+    const body = req.body
+    res.send(body)
   } catch (error) {
     handleHttp(res, 'ERROR_POST_URL')
   }
@@ -32,3 +33,5 @@ const deletUrl = (req: Request, res: Response) => {
     handleHttp(res, 'ERROR_DELETE_URL')
   }
 }
+
+export { getUrl, getUrls, postUrl, deletUrl }
