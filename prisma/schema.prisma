@@ -29,6 +29,6 @@ model Link {
   createdAt DateTime @default(now())
   shortUrl  String   @unique
   clicks    Int      @default(0)
-  user      User     @relation(fields: [userId], references: [id])
-  userId    Int
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    Int?
 }
